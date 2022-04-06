@@ -1,39 +1,36 @@
 // Copyright (C) 2022 Devin Jhu All rights reserved
 //
 // Created by Devin Jhu
-// Created on March 2022
-// The number game
+// Created on April 2022
+// The date calculator
 
 #include <iostream>
-#include <random>
+#include <string>
+
 
 
 int main() {
-    // this function is a guessing game
-    int NUMBER_ANSWER;
+    // this function helps gandma
+    std::string AGE_STRING;
+    int AGE;
 
-    std::random_device rseed;
-    // mersenne_twister
-    std::mt19937 rgen(rseed());
-    // randome number between [1,9]
-    std::uniform_int_distribution <int> idist(1 , 9);
-    NUMBER_ANSWER = idist(rgen);
-    int GUESS;
-
-    std::cout << "The number game";
-    std::cout << "" << std::endl;
-    std::cout << "Guess a number between 1 and 9";
+    std::cout << "Are you old enough to date my gradchild";
     // input
     std::cout << "" << std::endl;
-    std::cout << "enter number: ";
-    std::cin >> GUESS;
+    std::cout << "enter age: ";
+    std::cin >> AGE_STRING;
 
     // process
-    if (GUESS == NUMBER_ANSWER) {
-        std::cout << "You win!";
-    } else {
-        std::cout << "You lose :(";
+    try {
+        AGE = std::stoi(AGE_STRING);
+        if (AGE >= 25 && AGE <= 40) {
+           std::cout << "You may date my grandchild";
+        } else {
+            std::cout << "You may NOT date my grandchild";
+        }
+    } catch (std::invalid_argument) {
+        std::cout << "\nNot an age";
     }
     std::cout << "" << std::endl;
-    std::cout << "Done.";
+    std::cout << "\nDone.";
 }
