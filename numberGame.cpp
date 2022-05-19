@@ -11,19 +11,20 @@
 
 int main() {
     // this function helps gandma
-    std::string AGE_STRING;
-    int AGE;
+    std::string ageString;
+    int age;
+
 
     std::cout << "Are you old enough to date my gradchild";
     // input
     std::cout << "" << std::endl;
     std::cout << "enter age: ";
-    std::cin >> AGE_STRING;
+    std::cin >> ageString;
 
     // process
     try {
-        AGE = std::stoi(AGE_STRING);
-        if (AGE >= 25 && AGE <= 40) {
+        age = std::stoi(ageString);
+        if (age >= 25 && AGE <= 40) {
            std::cout << "You may date my grandchild";
         } else {
             std::cout << "You may NOT date my grandchild";
